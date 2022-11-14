@@ -30,9 +30,9 @@ namespace prod_class_table
      // ORACLEL DB TABLE 연결
         private DataTable GetData()
         {
-            string strConn = "Data Source = DEV_DDF; User ID = DDDB; Password = dddb";
+            string strConn = "Data Source = DEV_DDF; User ID = DKPS; Password = dkps";
             OracleConnection conn = new OracleConnection(strConn);
-            OracleDataAdapter adapter = new OracleDataAdapter("select PROD_CODE, PROD_NAME, PROD_ABBR, PROD_ENG, PROD_TYPE, PROD_CLASS3, PROD_CLASS2, PROD_STR_DT, PROD_END_DT, UNIT_PRICE from SMCODE01", conn);
+            OracleDataAdapter adapter = new OracleDataAdapter("select * from program_serial", conn);
             DataTable dt = new DataTable();
             adapter.Fill(dt);
 
@@ -55,7 +55,7 @@ namespace prod_class_table
             dataGridView1.DataSource = dt;
 
          // 컬럼명 변경
-            this.dataGridView1.Columns[0].HeaderText = "제품코드";
+/*            this.dataGridView1.Columns[0].HeaderText = "제품코드";
             this.dataGridView1.Columns[1].HeaderText = "제품명";
             this.dataGridView1.Columns[2].HeaderText = "제품약어명";
             this.dataGridView1.Columns[3].HeaderText = "제품영문명";
@@ -64,7 +64,7 @@ namespace prod_class_table
             this.dataGridView1.Columns[6].HeaderText = "제품중분류";
             this.dataGridView1.Columns[7].HeaderText = "제품생산개시일";
             this.dataGridView1.Columns[8].HeaderText = "제품생산종료일";
-            this.dataGridView1.Columns[9].HeaderText = "기준단가";
+            this.dataGridView1.Columns[9].HeaderText = "기준단가";*/
 
          // 테이블 컬럼숨기기
          // this.dataGridView1.Columns[1].Visible = false;
